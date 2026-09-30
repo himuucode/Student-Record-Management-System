@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Students - Student Record Management System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 class="page-title">View Students</h1>
+      <div class="admin-info" id="adminInfo"></div>
+    </header>
+
+    <div class="message" id="studentsMessage"></div>
+
+    <!-- Figure 4: Student List -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2 class="panel-title">Student List</h2>
+        <input class="form-control panel-search" type="text" id="studentSearch" placeholder="Search Student..." />
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:11%">Roll No</th>
+              <th style="width:20%">Name</th>
+              <th style="width:20%">Department</th>
+              <th style="width:13%">Semester</th>
+              <th style="width:10%">Marks</th>
+              <th style="width:12%">Status</th>
+              <th style="width:14%" class="col-center">Action</th>
+            </tr>
+          </thead>
+          <tbody id="studentsBody">
+            <tr class="empty-row"><td colspan="7">Loading student records...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Edit student dialog (opens from the Edit action button) -->
+  <div class="modal" id="editModal">
+    <div class="modal-card">
+      <div class="panel-head">
+        <h2 class="panel-title">Edit Student</h2>
+      </div>
+
+      <div class="message" id="editMessage"></div>
+
+      <form id="editForm" novalidate>
+        <input type="hidden" id="editId" />
+
+        <div class="form-group">
+          <label class="form-label" for="editName">Student Name</label>
+          <input class="form-control" type="text" id="editName" placeholder="Enter Student Name" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="editRollNumber">Roll Number</label>
+          <input class="form-control" type="text" id="editRollNumber" placeholder="Enter Roll Number" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="editDepartment">Department</label>
+          <select class="form-control" id="editDepartment">
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+            <option value="ME">ME</option>
+            <option value="CE">CE</option>
+            <option value="EEE">EEE</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="editSemester">Semester</label>
+          <select class="form-control" id="editSemester">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="editMarks">Marks</label>
+          <input class="form-control" type="text" id="editMarks" placeholder="Enter Marks" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="editEmail">Email</label>
+          <input class="form-control" type="email" id="editEmail" placeholder="Enter Email" />
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn" type="submit" id="editSave">
+            <span data-icon="save"></span>Save Changes
+          </button>
+          <button class="btn btn-grey" type="button" id="editCancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/page-icons.js"></script>
+  <script src="js/students.js"></script>
+</body>
+</html>

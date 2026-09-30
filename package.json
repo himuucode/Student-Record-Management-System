@@ -1,0 +1,29 @@
+{
+  "name": "student-record-management-system",
+  "version": "1.0.0",
+  "description": "SRMS - Student Record Management System (Admin based student record management website)",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "seed": "node backend/seed/seed.js"
+  },
+  "keywords": [
+    "srms",
+    "student-record-management-system",
+    "express",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Himanshu Dwivedi (12406639)",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.6.0"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.0.0"
+  }
+}

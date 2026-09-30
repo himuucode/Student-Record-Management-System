@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Student - Student Record Management System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 class="page-title">Add Student</h1>
+      <div class="admin-info" id="adminInfo"></div>
+    </header>
+
+    <!-- Figure 3: Add Student form -->
+    <section class="panel">
+      <div class="message" id="addMessage"></div>
+
+      <form id="addStudentForm" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="studentName">Student Name</label>
+            <input class="form-control" type="text" id="studentName" placeholder="Enter Student Name" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="rollNumber">Roll Number</label>
+            <input class="form-control" type="text" id="rollNumber" placeholder="Enter Roll Number" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="department">Department</label>
+            <select class="form-control" id="department">
+              <option value="CSE">CSE</option>
+              <option value="IT">IT</option>
+              <option value="ECE">ECE</option>
+              <option value="ME">ME</option>
+              <option value="CE">CE</option>
+              <option value="EEE">EEE</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="semester">Semester</label>
+            <select class="form-control" id="semester">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="marks">Marks</label>
+            <input class="form-control" type="text" id="marks" placeholder="Enter Marks" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" id="email" placeholder="Enter Email" />
+          </div>
+        </div>
+
+        <button class="btn" type="submit" id="saveStudentBtn" style="margin-top:26px">
+          <span data-icon="save"></span>Save Student
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/page-icons.js"></script>
+  <script src="js/add-student.js"></script>
+</body>
+</html>

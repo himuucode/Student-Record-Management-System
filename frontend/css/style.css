@@ -1,0 +1,514 @@
+/* ==================================================================
+   SRMS - Student Record Management System
+   Stylesheet recreated from the project report screenshots
+   (Figures 1-7, pages 11-14)
+   ================================================================== */
+
+:root {
+  --blue: #2563EB;
+  --blue-hover: #1D4ED8;
+  --navy: #1E3A5F;
+  --sidebar-bg: #1E293B;
+  --sidebar-brand: #60A5FA;
+  --sidebar-text: #E2E8F0;
+  --sidebar-muted: #94A3B8;
+  --page-bg: #F4F6F9;
+  --panel-border: #E7E8EB;
+  --panel-bg: #FFFFFF;
+  --text: #1E293B;
+  --title: #000000;
+  --muted: #666666;
+  --placeholder: #9CA3AF;
+  --input-border: #E5E7EB;
+  --row-alt: #F8FAFC;
+  --row-border: #F1F5F9;
+  --green: #008000;
+  --red: #FF0000;
+  --danger: #EF4444;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+/* ------------------------------ base ------------------------------ */
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--text);
+  background: var(--page-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, p { margin: 0; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; }
+
+/* ============================== SIDEBAR ============================ */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 210px;
+  padding: 18px 16px 20px;
+  background: var(--sidebar-bg);
+  overflow-y: auto;
+}
+
+.brand { text-align: center; }
+
+.brand-name {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--sidebar-brand);
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--sidebar-muted);
+  margin-top: 2px;
+}
+
+.nav {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--sidebar-text);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.nav-item svg { width: 17px; height: 17px; flex: 0 0 17px; }
+
+.nav-item:hover { background: rgba(255, 255, 255, 0.08); }
+
+.nav-item.active,
+.nav-item.active:hover { background: var(--blue); color: #FFFFFF; }
+
+/* =============================== MAIN ============================== */
+.main {
+  margin-left: 210px;
+  padding: 22px;
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar svg { width: 15px; height: 15px; }
+
+/* ========================= STATISTIC CARDS ========================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 26px 30px;
+  min-height: 155px;
+}
+
+.stat-icon { color: var(--blue); }
+.stat-icon svg { width: 28px; height: 28px; }
+
+.stat-label {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.stat-value {
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Reports page - card content is centred */
+.stat-card.centered { text-align: center; padding: 18px 20px 28px; }
+.stat-card.centered .stat-icon svg { width: 26px; height: 26px; }
+.stat-card.centered .stat-label { margin-top: 12px; }
+
+/* ============================== PANEL ============================== */
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 26px 24px;
+}
+
+.panel + .panel { margin-top: 22px; }
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.panel-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.panel-title.blue { color: var(--blue); }
+
+.panel-narrow { max-width: 590px; }
+
+/* ============================== TABLES ============================= */
+.table-wrap { width: 100%; overflow-x: auto; }
+
+table.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;
+}
+
+.data-table thead th {
+  background: var(--blue);
+  color: #FFFFFF;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 14px;
+  white-space: nowrap;
+}
+
+.data-table thead th:first-child { border-top-left-radius: 8px; }
+.data-table thead th:last-child { border-top-right-radius: 8px; }
+
+.data-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--row-border);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.data-table tbody tr:nth-child(even) { background: var(--row-alt); }
+.data-table tbody tr:last-child td { border-bottom: none; }
+
+.data-table .col-center { text-align: center; }
+.data-table .empty-row td {
+  text-align: center;
+  color: var(--muted);
+  padding: 26px 14px;
+}
+
+.status-pass { color: var(--green); font-weight: 600; }
+.status-fail { color: var(--red); font-weight: 600; }
+
+/* Action buttons (Edit / Delete) - Figure 4 */
+.action-cell { display: flex; align-items: center; justify-content: center; gap: 12px; }
+
+.icon-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon-btn svg { width: 14px; height: 14px; }
+.icon-btn.edit { background: var(--blue); }
+.icon-btn.edit:hover { background: var(--blue-hover); }
+.icon-btn.delete { background: var(--danger); }
+.icon-btn.delete:hover { background: #DC2626; }
+
+/* ============================== FORMS ============================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 25px;
+  row-gap: 12px;
+}
+
+.form-group { margin-bottom: 12px; }
+.form-grid .form-group { margin-bottom: 0; }
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 7px;
+}
+
+.form-control {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: #FFFFFF;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  outline: none;
+}
+
+.form-control::placeholder { color: var(--placeholder); }
+
+.form-control:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 1px var(--blue);
+}
+
+select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%231E293B' d='M8 11.5 2.5 6h11z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 34px;
+}
+
+/* ============================= BUTTONS ============================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  height: 42px;
+  padding: 0 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: var(--blue);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+}
+
+/* ======================= EDIT STUDENT DIALOG ======================= */
+/* Opens from the Edit action button on the View Students page.
+   The list page itself is unchanged (Figure 4). */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(15, 23, 42, 0.45);
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.modal.show { display: flex; align-items: flex-start; justify-content: center; }
+
+.modal-card {
+  width: 480px;
+  max-width: 100%;
+  margin: auto;
+  background: #FFFFFF;
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+}
+
+.modal-actions { display: flex; gap: 12px; margin-top: 22px; }
+
+.btn-grey { background: #64748B; }
+.btn-grey:hover { background: #475569; }
+
+/* =========================== LOGIN PAGE ============================ */
+/* Figure 1 - blue gradient background with a centred white card */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(115deg, #1E3B73 0%, #2B4F8B 100%);
+}
+
+.login-card {
+  width: 350px;
+  max-width: 100%;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 14px 34px rgba(6, 18, 41, 0.28);
+}
+
+.login-title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--navy);
+}
+
+.login-subtitle {
+  margin-top: 8px;
+  margin-bottom: 22px;
+  text-align: center;
+  font-size: 14px;
+  color: #8C8C8C;
+}
+
+.login-card .form-label { color: var(--text); }
+.login-card .form-group { margin-bottom: 14px; }
+
+.login-btn {
+  width: 100%;
+  height: 42px;
+  margin-top: 6px;
+  background: #2A5298;
+  font-size: 15px;
+}
+
+.login-btn:hover { background: #234688; }
+
+.login-card .message { margin-bottom: 14px; }
+
+/* ========================== DARK THEME ============================= */
+/* Only applied when the administrator selects "Dark" in Settings */
+body.theme-dark {
+  --page-bg: #0F172A;
+  --panel-bg: #1E293B;
+  --panel-border: #334155;
+  --text: #E2E8F0;
+  --title: #F8FAFC;
+  --muted: #94A3B8;
+  --row-alt: #22304A;
+  --row-border: #334155;
+  --input-border: #334155;
+}
+
+body.theme-dark .form-control {
+  background: #0F172A;
+  color: var(--text);
+}
+
+body.theme-dark .form-label { color: #E2E8F0; }
+body.theme-dark .data-table tbody td { color: var(--text); }
+
+/* ========================= RESPONSIVENESS ========================== */
+@media (max-width: 1100px) {
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px) {
+  .sidebar { width: 190px; padding: 16px 12px; }
+  .main { margin-left: 190px; padding: 18px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .page-title { font-size: 24px; }
+  .panel { padding: 20px; }
+}
+
+@media (max-width: 680px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .topbar { flex-wrap: wrap; }
+  .search-bar { flex-wrap: wrap; }
+  .btn-search { width: 100%; flex: 1 1 100%; }
+  .sidebar { position: static; width: 100%; }
+  .main { margin-left: 0; }
+}
+.btn svg { width: 15px; height: 15px; }
+.btn:hover { background: var(--blue-hover); }
+.btn:disabled { opacity: 0.65; cursor: not-allowed; }
+.btn-block { width: 100%; }
+.btn-search { width: 105px; flex: 0 0 105px; }
+
+/* Messages (success / error banners) */
+.message {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+
+.message.show { display: flex; }
+.message svg { width: 18px; height: 18px; flex: 0 0 18px; }
+.message.success { background: #ECFDF3; border-color: #A7F3D0; color: #065F46; }
+.message.error { background: #FEF2F2; border-color: #FECACA; color: #991B1B; }
+.message.info { background: #EFF6FF; border-color: #BFDBFE; color: #1E40AF; }
+
+/* ============================== SEARCH ============================= */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.search-bar .form-control { flex: 1 1 auto; }
+
+.detail-row {
+  display: flex;
+  gap: 6px;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.detail-row .detail-label { font-weight: 700; }
+.detail-list { margin-top: 18px; }
+
+.panel-search { width: 200px; height: 42px; }

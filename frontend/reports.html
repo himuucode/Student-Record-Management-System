@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports - Student Record Management System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 class="page-title">Reports</h1>
+      <div class="admin-info" id="adminInfo"></div>
+    </header>
+
+    <div class="message" id="reportsMessage"></div>
+
+    <!-- Figure 6: report cards -->
+    <section class="stats-grid">
+      <div class="stat-card centered">
+        <div class="stat-icon" data-icon="totalStudents"></div>
+        <div class="stat-label">Total Students</div>
+        <div class="stat-value" id="reportTotal">0</div>
+      </div>
+      <div class="stat-card centered">
+        <div class="stat-icon" data-icon="passed"></div>
+        <div class="stat-label">Passed Students</div>
+        <div class="stat-value" id="reportPassed">0</div>
+      </div>
+      <div class="stat-card centered">
+        <div class="stat-icon" data-icon="failed"></div>
+        <div class="stat-label">Failed Students</div>
+        <div class="stat-value" id="reportFailed">0</div>
+      </div>
+      <div class="stat-card centered">
+        <div class="stat-icon" data-icon="averageMarks"></div>
+        <div class="stat-label">Average Marks</div>
+        <div class="stat-value" id="reportAverage">0%</div>
+      </div>
+    </section>
+
+    <!-- Department wise student counts -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2 class="panel-title">Department Wise Students</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:55%">Department</th>
+              <th style="width:45%" class="col-center">Total Students</th>
+            </tr>
+          </thead>
+          <tbody id="departmentBody">
+            <tr class="empty-row"><td colspan="2">Loading report...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/page-icons.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>

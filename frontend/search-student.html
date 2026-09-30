@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Student - Student Record Management System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 class="page-title">Search Student</h1>
+      <div class="admin-info" id="adminInfo"></div>
+    </header>
+
+    <!-- Figure 5: search by roll number -->
+    <form class="search-bar" id="searchForm" novalidate>
+      <input class="form-control" type="text" id="rollNumberInput" placeholder="Enter Roll Number" />
+      <button class="btn btn-search" type="submit" id="searchBtn">
+        <span data-icon="searchStudent"></span>Search
+      </button>
+    </form>
+
+    <div class="message" id="searchMessage"></div>
+
+    <!-- Student Details card (hidden until a student is found) -->
+    <section class="panel panel-narrow" id="detailsCard" style="display:none">
+      <h2 class="panel-title blue">Student Details</h2>
+      <div class="detail-list" id="detailsList"></div>
+    </section>
+  </main>
+
+  <script src="js/icons.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/page-icons.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
